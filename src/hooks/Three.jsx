@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Three = () => {
     const [todo, setTodo] = useState([]);
@@ -12,7 +12,6 @@ const Three = () => {
         const value = e.target.value;
         setInput(value);
     }
-
     const addItem = () => {
         // setTodo(input)
 
@@ -20,7 +19,36 @@ const Three = () => {
             return [...prev,input];
             
         })
+
+        const allTask = JSON.parse(localStorage.getItem('mytask')) || [];
+        
+        allTask.push(input);
+
+        localStorage.setItem('mytask',JSON.stringify(allTask));
+
+        setInput("");
     }
+
+    const deleteItem = (id) => {
+        console.log(id);
+
+        setTodo((prev)=>{
+            return prev.filter((item,index)=>{
+                return index != id;
+            })
+        })
+    }
+
+    // useEffect(callback,dependencies)
+    useEffect(()=>{
+        // console.log("hi");
+        const storeItem = JSON.parse(localStorage.getItem('mytask')) || [];
+
+        setTodo(storeItem);
+
+       
+    },[])
+
     console.log(todo);
     return (
         <>
@@ -28,6 +56,12 @@ const Three = () => {
             <label>Add Task</label>
             <input type='text' value={input} onChange={handleInput} placeholder='Enter Item' />
             <button onClick={addItem}>Add item</button>
+            <br/>
+            {
+                todo.length ? todo.map((item,index)=>(
+                    <li key={index}>{item} - <button onClick={() => deleteItem(index)}>Delete</button></li>
+                )) : "No Data"
+            }
         </>
     )
 }

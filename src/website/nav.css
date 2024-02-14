@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+*{
+    margin:0;
+    padding:0;
+    font-family: "Roboto", sans-serif;
+}
+:root{
+    --primaryColor: #EF299D;
+    --dark: #000;
+    --light: #fff;
+    --primaryHover: #b4307d;
+}
+.container{
+    width: 100%;
+    height: 60px;
+    /* background-color: orange; */
+    border-bottom: 1px solid rgb(228, 227, 227);
+    padding: 5px 0px;
+    box-shadow: 0px 10px 13px -15px rgba(0,0,0,0.3);
+    
+
+}
+
+.nav{
+    max-width: 1140px;
+    height: 60px;
+    /* background-color: green; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+    color: var(--dark);
+    
+}
+.nav ul{
+    display: flex;
+    gap: 25px;
+    
+}
+.nav ul li{
+    list-style-type: none;
+    letter-spacing: .5px;
+}
+.nav ul li a{
+    text-decoration: none;
+    color: var(--dark);
+}
+
+.nav h2 > a{
+    text-decoration: none;
+}
+.nav span{
+    color: var(--primaryColor);
+}
+
+.btns{
+    display: flex;
+    gap: 10px;
+}
+.btns button:nth-child(1){
+    padding: 15px;
+    /* background-color: var(--dark); */
+    border-radius: 8px;
+    border:none;
+    width: 100px;
+    font-size: 17px;
+}
+.btns button:nth-child(2){
+    padding: 15px;
+    background-color: var(--primaryColor);
+    border-radius: 8px;
+    border:none;
+    width: 170px;
+    color: var(--light);
+    font-size: 17px;
+}
+.btns button:nth-child(1):hover{
+    cursor: pointer;
+    border: 1px solid var(--primaryColor);
+
+}
+.btns button:nth-child(2):hover{
+    background-color: var(--primaryHover);
+    cursor: pointer;
+}

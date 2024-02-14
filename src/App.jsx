@@ -2,6 +2,8 @@ import React from 'react';
 import First from './hooks/first';
 import Second from './hooks/Second';
 import Three from './hooks/Three';
+import Data from './components/Data';
+import Index from './website';
 // import Nav from './components/Nav';
 // import Header from './components/Header';
  /*
@@ -29,7 +31,14 @@ const App = () => {
     {/* Hooks */}
     {/* <First/> */}
     {/* <Second/> */}
-    <Three/>
+    {/* <Three/> */}
+
+
+    {/* <Data name="khan" age={22}/> */}
+
+
+    {/* Website work here */}
+    <Index/>
     
 
     </>

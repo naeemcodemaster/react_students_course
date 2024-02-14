@@ -10,7 +10,7 @@ const Second = () => {
 
         setCount((prev)=>prev + 1);
         setCount((prev)=>prev + 2);
-
+       
     }
     return (
         <>

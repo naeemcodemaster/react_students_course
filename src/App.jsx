@@ -4,6 +4,7 @@ import Second from './hooks/Second';
 import Three from './hooks/Three';
 import Data from './components/Data';
 import Index from './website';
+import './App.css';
 // import Nav from './components/Nav';
 // import Header from './components/Header';
  /*

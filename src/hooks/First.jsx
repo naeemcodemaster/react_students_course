@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 const First = () => {
   const [count, setCount] = useState(0);
-
   const incr = () => {
     setCount(count + 1);
   }
@@ -25,3 +24,5 @@ const First = () => {
 }
 
 export default First
+
+

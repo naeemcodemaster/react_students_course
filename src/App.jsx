@@ -5,6 +5,11 @@ import Three from './hooks/Three';
 import Data from './components/Data';
 import Index from './website';
 import './App.css';
+import UseRef_One from './hooks/useRef/UseRef_One';
+import UseRef_Two from './hooks/useRef/UseRef_Two';
+import UseRef_Three from './hooks/useRef/UseRef_Three';
+import UseEffect from './hooks/useEffect/UseEffect';
+import UseReducer from './hooks/useReducer/UseReducer';
 // import Nav from './components/Nav';
 // import Header from './components/Header';
  /*
@@ -39,7 +44,17 @@ const App = () => {
 
 
     {/* Website work here */}
-    <Index/>
+    {/* <Index/> */}
+
+    {/* <UseRef_One/> */}
+    {/* <UseRef_Two/> */}
+
+    {/* <UseRef_Three value={10}/> */}
+
+
+    {/* <UseEffect/> */}
+
+    <UseReducer/>
     
 
     </>

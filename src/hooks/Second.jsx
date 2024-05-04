@@ -8,8 +8,8 @@ const Second = () => {
         // setCount(count + 1);
         // setCount(count + 1);
 
-        setCount((prev)=>prev + 1);
-        setCount((prev)=>prev + 2);
+        // setCount((prev)=>prev + 1);
+        // setCount((prev)=>prev + 2);
        
     }
     return (

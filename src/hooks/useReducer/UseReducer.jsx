@@ -7,17 +7,15 @@ function UseReducer() {
 
   const [state,dispatch] = useReducer(reducer,initialState);
   
-
   return (
     <>
 
     <p>value is {state.counter}</p>
 
-    <button onClick={()=>dispatch({type:'INCREMENT'})}>Increment</button>
+    <button onClick={()=>dispatch({type:'INCREMENT',payload:5})}>Increment</button>
 
-    <button onClick={()=>dispatch({type:'DECREMENT'})}>Decrement</button>
+    <button onClick={()=>dispatch({type:'DECREMENT',payload:5})}>Decrement</button>
     
-
     </>
   )
 }
@@ -25,9 +23,9 @@ function UseReducer() {
 function reducer(state,action){
     switch(action.type){
         case 'INCREMENT':
-            return {counter:state.counter + 1}
+            return {counter:state.counter + action.payload}
         case 'DECREMENT':
-            return {counter: state.counter - 1}
+            return {counter: state.counter - action.payload}
         default:
             return state;
     }

@@ -1,18 +1,19 @@
 import React from 'react';
-import First from './hooks/first';
-import Second from './hooks/Second';
-import Three from './hooks/Three';
-import Data from './components/Data';
-import Index from './website';
-import './App.css';
-import UseRef_One from './hooks/useRef/UseRef_One';
-import UseRef_Two from './hooks/useRef/UseRef_Two';
-import UseRef_Three from './hooks/useRef/UseRef_Three';
-import UseEffect from './hooks/useEffect/UseEffect';
-import UseReducer from './hooks/useReducer/UseReducer';
-import UseMemo from './hooks/useMemo/UseMemo';
-import UseMemo2 from './hooks/useMemo/UseMemo2';
-import UseCallback from './hooks/useCallback/UseCallback';
+// import First from './hooks/first';
+// import Second from './hooks/Second';
+// import Three from './hooks/Three';
+// import Data from './components/Data';
+// import Index from './website';
+// import './App.css';
+// import UseRef_One from './hooks/useRef/UseRef_One';
+// import UseRef_Two from './hooks/useRef/UseRef_Two';
+// import UseRef_Three from './hooks/useRef/UseRef_Three';
+// import UseEffect from './hooks/useEffect/UseEffect';
+// import UseReducer from './hooks/useReducer/UseReducer';
+// import UseMemo from './hooks/useMemo/UseMemo';
+// import UseMemo2 from './hooks/useMemo/UseMemo2';
+// import UseCallback from './hooks/useCallback/UseCallback';
+import DataTable from './project1/DataTable';
 // import Nav from './components/Nav';
 // import Header from './components/Header';
  /*
@@ -63,7 +64,9 @@ const App = () => {
     {/* <UseMemo/> */}
     {/* <UseMemo2/> */}
 
-    <UseCallback/>
+    {/* <UseCallback/> */}
+
+    <DataTable/>
     
 
     </>

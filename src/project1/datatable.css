@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    min-height: 500px;
+    background-color: rgb(222, 221, 218);
+    display: flex;
+    justify-content: space-between;
+
+}
+.leftside_form{
+    background-color: orange;
+    width: 50%;
+    text-align: center;
+}
+
+.rightside_datatable{
+    background-color: green;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.formInputs{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
+input[type="text"]{
+    width: 250px;
+    height: 22px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+button{
+    width: 80px;
+    height: 25px;
+    background-color: aliceblue;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+
+
+}
+button:hover{
+    background-color: rgb(220, 225, 231);
+}
+
+table{
+    border-collapse: collapse;
+    
+}
+
+table th,td{
+    border:1px solid #ddd;
+    padding: 7px;
+    max-width: 350px;
+    word-wrap: break-word;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}

@@ -2,8 +2,9 @@
 import { useState } from 'react';
 import './datatable.css';
 function DataTable() {
-    const [allData,setAllData] = useState([]);
 
+
+    const [allData,setAllData] = useState([]);
 
     const [formData,setFormData] = useState({
         name:"",
@@ -11,16 +12,37 @@ function DataTable() {
         fee:""
     })
 
+    {name:"khan"}
+
     const handleInputData = (e) =>{
     
         setFormData({...formData,[e.target.name]:e.target.value});
-        
+
+        // {name:"khan",course:"java1",fee:2000}
         
     }
-    console.log(formData);
+    // console.log(formData);
 
-    const handleAddData = (e) => {
+    const handleAddData = () => {
+        if(formData.name && formData.course && formData.fee){
+            const newData = {
+                id:Date.now(),
+                name:formData.name,
+                course:formData.course,
+                fee:formData.fee
+            }
+            setAllData([...allData,newData]);
+            setFormData({name:"",course:"",fee:""})
+
+        }
+
+        // console.table(allData);
         
+    }
+
+    const handleDelete = (id) =>{
+        const updatedData = allData.filter((record)=>record.id !== id);
+        setAllData(updatedData);
     }
 
     return (
@@ -50,13 +72,17 @@ function DataTable() {
                     </thead>
                     <tbody>
 
-                        <tr>
-                            <td>khan</td>
-                            <td>Java</td>
-                            <td>25000</td>
-                            <td><button>update</button></td>
-                            <td><button>Delete</button></td>
-                        </tr>
+                        {
+                            allData.map((record,index)=>(
+                                 <tr key={index}>
+                                    <td>{record.name}</td>
+                                    <td>{record.course}</td>
+                                    <td>{record.fee}</td>
+                                    <td><button>Update</button></td>
+                                    <td><button onClick={()=>handleDelete(record.id)}>Delete</button></td>
+                                 </tr>   
+                            ))
+                        }
                     </tbody>
                 </table>
                 <div className='pagination'>

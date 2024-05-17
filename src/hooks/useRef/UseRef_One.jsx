@@ -24,6 +24,8 @@ function UseRef_One() {
 
 
         console.log(count.current);
+
+        
     }
     
     return (

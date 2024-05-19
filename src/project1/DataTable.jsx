@@ -92,8 +92,8 @@ function DataTable() {
                             <th>Username</th>
                             <th>Course</th>
                             <th>Fee</th>
-                            <th>Update Record</th>
-                            <th>Delete Record</th>
+                            <th>Update</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>

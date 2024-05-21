@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './datatable.css';
 function DataTable() {
 
@@ -11,7 +11,7 @@ function DataTable() {
         fee: ""
     })
 
-    { name: "khan" }
+    // { name: "khan" }
 
     const handleInputData = (e) => {
 
@@ -68,7 +68,33 @@ function DataTable() {
         }
         const updateData = allData.map((record) => record.id == id ? { ...record, ...field } : record);
         setAllData(updateData);
+
     }
+
+    // When cursor click outside the table
+    const outsideClick = useRef(false);
+
+    useEffect(() => {
+
+        const handleOutsideClick = (e) => {
+            if (outsideClick.current && !outsideClick.current.contains(e.target)) {
+                setEditId(false);
+            }
+        }
+
+        document.addEventListener('click', handleOutsideClick);
+
+    }, [])
+
+    // Search work
+    const [search, setSearch] = useState('');
+    const handleSearch = (e) => {
+        setSearch(e.target.value);
+    }
+
+    const filteredData = allData.filter((record)=>record.name.toLowerCase().includes(search.toLowerCase()));
+
+    
 
 
     return (
@@ -84,9 +110,9 @@ function DataTable() {
             </div>
             <div className='rightside_datatable'>
                 <h2>Data Table</h2>
-                <input type='text' placeholder="Search by Name" />
+                <input type='text' name='search' placeholder='Search' value={search} onChange={handleSearch} />
 
-                <table>
+                <table ref={outsideClick}>
                     <thead>
                         <tr>
                             <th>Username</th>
@@ -99,7 +125,7 @@ function DataTable() {
                     <tbody>
 
                         {
-                            allData.map((record, index) => (
+                            filteredData.map((record, index) => (
                                 <tr key={index}>
                                     <td id={record.id} contentEditable={editId == record.id} onBlur={(e) => handleEdit(record.id, { name: e.target.innerText })}>{record.name}</td>
                                     <td id={record.id} contentEditable={editId == record.id} onBlur={(e) => handleEdit(record.id, { course: e.target.innerText })}>{record.course}</td>

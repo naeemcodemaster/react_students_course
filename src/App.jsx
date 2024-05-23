@@ -14,6 +14,7 @@ import React from 'react';
 // import UseMemo2 from './hooks/useMemo/UseMemo2';
 // import UseCallback from './hooks/useCallback/UseCallback';
 import DataTable from './project1/DataTable';
+import ProductHome from './project2/ProductHome';
 // import Nav from './components/Nav';
 // import Header from './components/Header';
  /*
@@ -66,8 +67,10 @@ const App = () => {
 
     {/* <UseCallback/> */}
 
-    <DataTable/>
+    {/* <DataTable/> */}
+
     
+    <ProductHome/>
 
     </>
 

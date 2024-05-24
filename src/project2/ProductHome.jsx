@@ -6,18 +6,28 @@ import Cart from './Cart';
 
 const initialState = {
     products:[],
-    cart:[]
-}
+    cart:[],
 
+}
 
 const reducer = (state,action) => {
     switch(action.type){
         case 'ADD_PRODUCT':
             return {...state,products:action.payload}
+        case 'ADD_TO_CART':
+            let product = action.payload;
+            product.quantity = 1;
+            product.totalPrice = product.price;
+            let updatedProduct = [...state.cart,product];
+            return {...state,cart:updatedProduct};
+
+        
     }
 }
 
+
 function ProductHome() {
+
 
     const [state,dispatch] = useReducer(reducer,initialState);
 
@@ -33,10 +43,18 @@ function ProductHome() {
         }
         getProducts();
     }, [])
+
+
+    const addToCart = (product) => {
+        console.log("Cart product ", product);
+        dispatch({type:'ADD_TO_CART',payload:product})
+    }
+
+    console.log("Cart data",state.cart);
     return (
         <div className='productHome'>
-            <Products />
-            <Cart />
+            <Products products={state.products} addToCart={addToCart}/>
+            <Cart cart={state.cart}/>
         </div>
     )
 }

@@ -20,7 +20,15 @@ const reducer = (state,action) => {
             product.totalPrice = product.price;
             let updatedProduct = [...state.cart,product];
             return {...state,cart:updatedProduct};
-
+        case 'REMOVE_FROM_CART':
+            return {...state,cart:state.cart.filter((product)=>product.id !== action.payload.id)}
+        case 'INCREASE_QTY':
+            let index = state.cart.findIndex((product)=>product.id === action.payload.id);
+            let item = state.cart[index];
+            return {
+                ...state,
+                cart:[...state.cart.slice(0,index),{...item,quantity:item.quantity+1,totalPrice:(item.quantity + 1)*item.price},...state.cart.slice(index+1)]
+            }    
         
     }
 }
@@ -49,12 +57,29 @@ function ProductHome() {
         console.log("Cart product ", product);
         dispatch({type:'ADD_TO_CART',payload:product})
     }
+    
+    // Remove from cart
+    const removeProduct = (product)=>{
+        dispatch({ type: 'REMOVE_FROM_CART', payload: product })
+    }
+
+
+    // Increase qty
+    const IncreaseQty = (product) =>{
+        dispatch({ type: 'INCREASE_QTY', payload: product })
+    }
+
+    //decrease qty
+    const DecreaseQty = (product) =>{
+        dispatch({ type: 'DECREASE_QTY', payload: product })
+    }
+
 
     console.log("Cart data",state.cart);
     return (
         <div className='productHome'>
             <Products products={state.products} addToCart={addToCart}/>
-            <Cart cart={state.cart}/>
+            <Cart cart={state.cart} removeProduct={removeProduct} IncreaseQty={IncreaseQty} DecreaseQty={DecreaseQty}/>
         </div>
     )
 }

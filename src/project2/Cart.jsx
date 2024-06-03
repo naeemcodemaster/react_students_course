@@ -1,6 +1,6 @@
 import React from 'react'
 import './producthome.css';
-function Cart({cart}) {
+function Cart({cart,removeProduct,IncreaseQty,DecreaseQty}) {
   return (
     <div className='cart'>
     <h3 style={{ textAlign: 'center' }}>Cart</h3>
@@ -15,13 +15,13 @@ function Cart({cart}) {
           <div>
           <p>Price: {item.price}</p>
           <div style={{display:'flex'}}>
-          <button>-</button>
+          <button onClick={()=>DecreaseQty(item)}>-</button>
           <p>{item.quantity}</p>
-          <button>+</button>
+          <button onClick={()=>IncreaseQty(item)}>+</button>
           </div>
           <p>Total Price: {item.totalPrice}</p>
+          <button onClick={()=>removeProduct(item)}>Remove Product</button>
           </div>
-
         </div>
       ))
     }

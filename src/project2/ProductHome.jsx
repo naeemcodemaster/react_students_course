@@ -78,7 +78,7 @@ function ProductHome() {
     console.log("Cart data",state.cart);
     return (
         <div className='productHome'>
-            <Products products={state.products} addToCart={addToCart}/>
+            <Products products={state.products} addToCart={addToCart} cart={state.cart}/>
             <Cart cart={state.cart} removeProduct={removeProduct} IncreaseQty={IncreaseQty} DecreaseQty={DecreaseQty}/>
         </div>
     )

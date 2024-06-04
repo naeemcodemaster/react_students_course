@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom';
 // import First from './hooks/first';
 // import Second from './hooks/Second';
 // import Three from './hooks/Three';
@@ -15,6 +16,11 @@ import React from 'react';
 // import UseCallback from './hooks/useCallback/UseCallback';
 import DataTable from './project1/DataTable';
 import ProductHome from './project2/ProductHome';
+import Home from './hooks/router/Home';
+import About from './hooks/router/About';
+import Contact from './hooks/router/Contact';
+import NavBar from './hooks/router/NavBar';
+import ErrorPage from './hooks/router/ErrorPage';
 // import Nav from './components/Nav';
 // import Header from './components/Header';
  /*
@@ -30,6 +36,8 @@ import ProductHome from './project2/ProductHome';
   */ 
 
 const App = () => {
+
+
   
   return (
     <>
@@ -70,7 +78,19 @@ const App = () => {
     {/* <DataTable/> */}
 
     
-    <ProductHome/>
+    {/* <ProductHome/> */}
+
+
+    <BrowserRouter>
+      <NavBar/>
+      <Routes>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/about' element={<About/>}></Route>
+        <Route path='/contact' element={<Contact/>}></Route>
+        {/* <Route path='/*' element={<ErrorPage/>}></Route> */}
+        <Route path='/*' element={<Navigate to='/'/>}></Route>
+      </Routes>
+    </BrowserRouter>
 
     </>
 

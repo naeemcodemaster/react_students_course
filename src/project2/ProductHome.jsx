@@ -29,10 +29,10 @@ const reducer = (state,action) => {
                 ...state,
                 cart:[...state.cart.slice(0,index),{...item,quantity:item.quantity+1,totalPrice:(item.quantity + 1)*item.price},...state.cart.slice(index+1)]
             }    
-        
+        default:
+           return state;
     }
 }
-
 
 function ProductHome() {
 

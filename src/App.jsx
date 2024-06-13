@@ -22,6 +22,7 @@ import Contact from './hooks/router/Contact';
 import NavBar from './hooks/router/NavBar';
 import ErrorPage from './hooks/router/ErrorPage';
 import Student from './hooks/router/Student';
+import Search from './hooks/router/Search';
 // import Nav from './components/Nav';
 // import Header from './components/Header';
  /*
@@ -86,9 +87,10 @@ const App = () => {
         <Route path='/' element={<Home/>}></Route>
         <Route path='/about' element={<About/>}></Route>
         <Route path='/contact' element={<Contact/>}></Route>
+        <Route path='/search' element={<Search/>}></Route>
 
         {/* Dynamic route set krna */}
-        {/* <Route path='/student/:name' element={<Student/>}></Route> */}
+        <Route path='/student/:name' element={<Student/>}></Route>
         
         <Route path='/student/:name/:age' element={<Student/>}></Route>
 

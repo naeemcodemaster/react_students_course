@@ -1,8 +1,13 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 
 function Contact() {
+  const location = useLocation();
+  console.log(location.pathname);
+  const name = location.pathname.replace("/","");
+
   return (
-    <div>Contact</div>
+    <div>Page name is {name}</div>
   )
 }
 

@@ -32,8 +32,13 @@ function NavBar() {
             </li>
 
             <li>
-            <NavLink className='nav-link' to='/student'>Contact</NavLink>
+            <NavLink className='nav-link' to='/student'>Student</NavLink>
             </li>
+
+            <li>
+            <NavLink className='nav-link' to='/search' state={{name:'state ka name',age:'state me age'}}>Search</NavLink>
+            </li>
+
             {/* <li>
             <NavLink className='nav-link' to='/search' state={{name:'state ka name',age:'state me age'}}>Search</NavLink>
             </li> */}

@@ -1,5 +1,12 @@
-import React from 'react';
-import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import Dashboard from './hooks/propsdrilling/Dashboard';
+import UserProfile from './hooks/propsdrilling/UserProfile';
+import Sidebar from './hooks/propsdrilling/Sidebar';
+import ProductList from './hooks/context2/ProductList';
+import Cart from './hooks/context2/Cart';
+import CartIcon from './hooks/context2/CartIcon';
+
+// import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 // import First from './hooks/first';
 // import Second from './hooks/Second';
 // import Three from './hooks/Three';
@@ -14,90 +21,113 @@ import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom';
 // import UseMemo from './hooks/useMemo/UseMemo';
 // import UseMemo2 from './hooks/useMemo/UseMemo2';
 // import UseCallback from './hooks/useCallback/UseCallback';
-import DataTable from './project1/DataTable';
-import ProductHome from './project2/ProductHome';
-import Home from './hooks/router/Home';
-import About from './hooks/router/About';
-import Contact from './hooks/router/Contact';
-import NavBar from './hooks/router/NavBar';
-import ErrorPage from './hooks/router/ErrorPage';
-import Student from './hooks/router/Student';
-import Search from './hooks/router/Search';
+// import DataTable from './project1/DataTable';
+// import ProductHome from './project2/ProductHome';
+// import Home from './hooks/router/Home';
+// import About from './hooks/router/About';
+// import Contact from './hooks/router/Contact';
+// import NavBar from './hooks/router/NavBar';
+// import ErrorPage from './hooks/router/ErrorPage';
+// import Student from './hooks/router/Student';
+// import Search from './hooks/router/Search';
+
 // import Nav from './components/Nav';
 // import Header from './components/Header';
- /*
-  In React, a "state" refers to the data that represents the current condition or values of a component. It is used to store and manage dynamic information within a component, allowing the component to render and behave differently based on changes to that data. State is mutable and can be updated over time in response to user actions, events, or other triggers, causing the component to re-render and reflect the updated state.
+/*
+ In React, a "state" refers to the data that represents the current condition or values of a component. It is used to store and manage dynamic information within a component, allowing the component to render and behave differently based on changes to that data. State is mutable and can be updated over time in response to user actions, events, or other triggers, causing the component to re-render and reflect the updated state.
 
-  or 
+ or 
 
-  Data over time change
+ Data over time change
 
-  Important Note
-  useState is an asynchronous hook and it doesn't change the state immediately, it has to wait for the component to re-render
-  
-  */ 
+ Important Note
+ useState is an asynchronous hook and it doesn't change the state immediately, it has to wait for the component to re-render
+ 
+ */
 
 const App = () => {
 
+  // const user = {
+  //   name:"khan",
+  //   age:22,
+  //   email:"khan@gmail.com"
+  // }
 
-  
+
+
   return (
     <>
-      
+
+      {/* <Dashboard user={user}/> */}
+
+       {/* <UserProfile/>  */}
+       {/* <Sidebar/> */}
+
+      <ProductList/>
+
+      <CartIcon/>
+      <Cart/>
+
 
       {/* <Nav /> */}
       {/* <Header/> */}
 
 
-    {/* Hooks */}
-    {/* <First/> */}
-    {/* <Second/> */}
-    {/* <Three/> */}
+      {/* Hooks */}
+      {/* <First/> */}
+      {/* <Second/> */}
+      {/* <Three/> */}
 
 
-    {/* <Data name="khan" age={22}/> */}
+      {/* <Data name="khan" age={22}/> */}
 
 
-    {/* Website work here */}
-    {/* <Index/> */}
+      {/* Website work here */}
+      {/* <Index/> */}
 
-    {/* <UseRef_One/> */}
-    {/* <UseRef_Two/> */}
+      {/* <UseRef_One/> */}
+      {/* <UseRef_Two/> */}
 
-    {/* <UseRef_Three value={10}/> */}
-
-
-    {/* <UseEffect/> */}
-
-    {/* <UseReducer/> */}
-
-    {/* <UseMemo/> */}
-    {/* <UseMemo2/> */}
-
-    {/* <UseCallback/> */}
-
-    {/* <DataTable/> */}
-
-    {/* <ProductHome/> */}
+      {/* <UseRef_Three value={10}/> */}
 
 
-    <BrowserRouter>
+      {/* <UseEffect/> */}
+
+      {/* <UseReducer/> */}
+
+      {/* <UseMemo/> */}
+      {/* <UseMemo2/> */}
+
+      {/* <UseCallback/> */}
+
+      {/* <DataTable/> */}
+
+      {/* <ProductHome/> */}
+
+
+      {/* <BrowserRouter>
       <NavBar/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/about' element={<About/>}></Route>
         <Route path='/contact' element={<Contact/>}></Route>
-        <Route path='/search' element={<Search/>}></Route>
+        <Route path='/search' element={<Search/>}></Route> */}
 
-        {/* Dynamic route set krna */}
-        <Route path='/student/:name' element={<Student/>}></Route>
-        
-        <Route path='/student/:name/:age' element={<Student/>}></Route>
+      {/* Dynamic route set krna */}
+      {/* <Route path='/student/:name' element={<Student/>}></Route> */}
 
-        {/* <Route path='/*' element={<ErrorPage/>}></Route> */}
-        <Route path='/*' element={<Navigate to='/'/>}></Route>
+      {/* <Route path='/student/:name/:age' element={<Student/>}></Route> */}
+
+      {/* <Route path='/*' element={<ErrorPage/>}></Route> */}
+      {/* <Route path='/*' element={<Navigate to='/'/>}></Route>
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
+
+   
+
+   
+
+
 
     </>
 

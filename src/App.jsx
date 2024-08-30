@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import Dashboard from './hooks/propsdrilling/Dashboard';
-import UserProfile from './hooks/propsdrilling/UserProfile';
-import Sidebar from './hooks/propsdrilling/Sidebar';
-import ProductList from './hooks/context2/ProductList';
-import Cart from './hooks/context2/Cart';
-import CartIcon from './hooks/context2/CartIcon';
+import ProductList from './hooks/zustand/ProductList';
+import Cart from './hooks/zustand/Cart';
+// import Dashboard from './hooks/propsdrilling/Dashboard';
+// import UserProfile from './hooks/propsdrilling/UserProfile';
+// import Sidebar from './hooks/propsdrilling/Sidebar';
+// import ProductList from './hooks/context2/ProductList';
+// import Cart from './hooks/context2/Cart';
+// import CartIcon from './hooks/context2/CartIcon';
 
 // import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 // import First from './hooks/first';
@@ -63,10 +65,10 @@ const App = () => {
        {/* <UserProfile/>  */}
        {/* <Sidebar/> */}
 
-      <ProductList/>
+      {/* <ProductList/>
 
       <CartIcon/>
-      <Cart/>
+      <Cart/> */}
 
 
       {/* <Nav /> */}
@@ -126,9 +128,9 @@ const App = () => {
    
 
    
-
-
-
+    {/* Use of Zustand */}
+    <ProductList/>
+    <Cart/>
     </>
 
   )
